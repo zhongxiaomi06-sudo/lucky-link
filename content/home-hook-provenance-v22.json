@@ -1,0 +1,34 @@
+{
+  "version": "v22",
+  "createdAt": "2026-09-16",
+  "generator": "OpenAI built-in image_gen",
+  "mode": "stylized-concept",
+  "source": "openai-imagegen://built-in/exec-0412633a-d3d1-4445-8c89-034c2f562ab3",
+  "input": {
+    "role": "User-provided visual reference only for pale blue and ivory palette, dense handmade charm variety and loop silhouette",
+    "shipped": false,
+    "copyingConstraint": "Do not reproduce recognizable characters, labels, text, logos or the exact arrangement"
+  },
+  "prompt": "Create one finished 9:16 mobile landing-page hero for a DIY phone-chain game. Use the reference only for its pale-blue and ivory palette, dense handmade charm variety and loop silhouette; redesign every charm, character, arrangement and material. Show an unmistakable functional phone chain attached through the lanyard eyelet of a pearl-white and silver smartphone. Make a large asymmetrical teardrop loop occupy about 68% of the frame. Include 16–20 varied, completely original collectible charms with clear silhouettes: sky-blue crystal stars, milky hearts, crescent, sleepy cloud sprite, round bluebird, tulip, mini rocket, checker cube, envelope, pearl clusters, irregular glass droplets, chrome links and enamel flowers. Use an original deep-navy shooting star with a coral swoosh as the focal charm. Style it as premium contemporary Japanese manga merchandise illustration fused with polished 2.5D product rendering, with delicate ink accents, subtle screentone, glossy resin, pearl ceramic, satin cord, enamel and chrome. Place it on quiet warm milk-paper textile with cool morning light. No text, UI, watermark, recognizable IP, logos, bracelet, disconnected pieces or impossible attachment.",
+  "original": {
+    "path": "../evidence/proposed-home-comic-v22.png",
+    "dimensions": [941, 1672],
+    "bytes": 2683195,
+    "sha256": "0603e06d49820920da8b06e39a20f97e18a226d26637c316cdd7ebadfb0e8ef1"
+  },
+  "delivery": [
+    {
+      "path": "../public/assets/home-hook-comic-v22.png",
+      "format": "PNG fallback",
+      "bytes": 2683195,
+      "sha256": "0603e06d49820920da8b06e39a20f97e18a226d26637c316cdd7ebadfb0e8ef1"
+    },
+    {
+      "path": "../public/assets/home-hook-comic-v22.webp",
+      "format": "WebP q90 delivery derivative",
+      "bytes": 355444,
+      "sha256": "c294a56fb9fa2fb75b3779c7e0ab7d06a76e11d36876dd60e6cdc4e9f4a13bca"
+    }
+  ],
+  "approval": "Approved by 钟笑咪 on 2026-09-16; approval covers the concept and homepage hook use, not public release or final device acceptance"
+}

@@ -1,0 +1,66 @@
+{
+  "version": "v30",
+  "createdAt": "2026-09-17",
+  "generator": "OpenAI built-in image_gen",
+  "mode": "approved-reference-layer-reconstruction",
+  "input": {
+    "path": "/Users/ashley/.codex/attachments/65e0439c-994d-4a6f-85d6-138daae55f8d/image-1.png",
+    "dimensions": [941, 1672],
+    "sha256": "784f7c971422d229130da432aa1b71929fafc2c450e1b2c6c69f6ca9778d4cd8",
+    "role": "Owner-approved visual reference for the teal mother-of-pearl jewelry tray, restrained gold hardware and full-screen composition",
+    "shipped": false
+  },
+  "layers": [
+    {
+      "id": "lucky-link-gravity-tray-base-v30",
+      "source": "openai-imagegen://built-in/exec-a5355a69-8738-46d2-a01c-7692fed494e8",
+      "promptSummary": "Remove every charm, symbol and control from the approved tray while preserving the photographed teal marbling, gold inlay, mother-of-pearl basin, light direction and exact 941x1672 geometry.",
+      "delivery": [
+        {
+          "path": "../public/assets/gravity-tray-base-v30.png",
+          "format": "PNG fallback",
+          "dimensions": [941, 1672],
+          "bytes": 1913791,
+          "sha256": "2d5084e5a3bf41bdd30629fc73a60a3d5f2e269216371cb82ab8e547094879a3"
+        },
+        {
+          "path": "../public/assets/gravity-tray-base-v30.webp",
+          "format": "WebP q90 delivery derivative",
+          "dimensions": [941, 1672],
+          "bytes": 159146,
+          "sha256": "0c8b38945ac2be99dd7311dc4dfc77a415c2109ea1f8de5653d72d374e3343aa"
+        }
+      ]
+    },
+    {
+      "id": "lucky-link-gravity-tray-hud-v30",
+      "source": "openai-imagegen://built-in/exec-855b79f0-995a-45f0-8acf-0f77575bcf2d.png",
+      "promptSummary": "Isolate only the pearl-and-gold back medallion, goal ring, sound medallion and progress rail from the approved composition on a genuine transparent canvas, preserving their shared perspective and coordinates.",
+      "rejectedIntermediate": "openai-imagegen://built-in/exec-b6682a25-bef5-44b2-b770-b272c3598461 (baked checkerboard, not shipped)",
+      "delivery": [
+        {
+          "path": "../public/assets/gravity-tray-hud-v30.png",
+          "format": "RGBA PNG fallback",
+          "dimensions": [941, 1672],
+          "bytes": 170574,
+          "sha256": "b6e8815357478b0bbdf55ae495c4262fef1acf0bc16585e83e1ca3101d9d682f"
+        },
+        {
+          "path": "../public/assets/gravity-tray-hud-v30.webp",
+          "format": "Lossless WebP delivery derivative",
+          "dimensions": [941, 1672],
+          "bytes": 113244,
+          "sha256": "7ac75cc05906622cbf679ce80c82e6c8e8f28ec605e11e6b0b7f584bf487cebb"
+        }
+      ]
+    }
+  ],
+  "runtimeComposition": [
+    "photographic tray base",
+    "transparent photographic hardware overlay",
+    "canvas-rendered seeded physics bodies",
+    "DOM-rendered player drops and effects",
+    "semantic DOM control hotspots"
+  ],
+  "approval": "钟笑咪 approved the generated layers and then confirmed the 390x844 runtime composition on 2026-09-17; approval does not authorize deployment or replace physical-iPhone verification"
+}

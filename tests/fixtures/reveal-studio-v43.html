@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lucky Link · Studio preview</title>
+<link rel="stylesheet" href="/src/tabletop.css"><link rel="stylesheet" href="/src/collection.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e8eff1}
+.gravity-dialog[data-game-state=won],.gravity-dialog[data-game-state=won] .match-reveal{background:#e8eff1;color:#355160}
+#studio-world{position:absolute;inset:0;width:100%;height:100%;z-index:0;touch-action:none}
+.gravity-dialog[data-game-state=won] header{position:absolute;z-index:5;left:0;right:0;top:0;display:flex;justify-content:space-between;padding:18px 12px;pointer-events:none}
+.tt-app .gravity-dialog[data-game-state=won] header button{position:absolute;top:0;width:54px;height:54px;color:#496573;background:none;border:0;border-radius:0;pointer-events:auto}
+.tt-app .gravity-dialog[data-game-state=won] header button:first-child{left:12px;right:auto}
+.tt-app .gravity-dialog[data-game-state=won] header button:last-child{left:auto;right:12px}
+header svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.gravity-dialog[data-game-state=won] .match-reveal{background:transparent;pointer-events:none}
+.gravity-dialog[data-game-state=won] .reveal-stage::after,.reveal-aura,.unlock-world,.reveal-sparks{display:none}
+.gravity-dialog[data-game-state=won] .reveal-prize{visibility:hidden}
+.gravity-dialog[data-game-state=won] .coupon-ticket{border:1px solid #b8cdd5;background:#f6fbfbe8;color:#355160;box-shadow:0 7px 24px #7293a41c,inset 0 1px #fff}
+.gravity-dialog[data-game-state=won] .coupon-ticket strong{color:#355160;text-shadow:none}
+.gravity-dialog[data-game-state=won] .match-end-actions .icon-cta svg{filter:none;stroke:#f8fbfb}
+.gravity-dialog[data-game-state=won] .match-end-actions .icon-cta svg circle:first-child{fill:#496f7e;stroke:#c6dce4}
+</style></head><body><div class="tt-app"><dialog class="studio-dialog match-dialog gravity-dialog is-reveal" data-game-state="won">
+<canvas id="studio-world" aria-label="Rotate the 3D charm"></canvas>
+<header><button aria-label="Preview only: back"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></button><button aria-label="Visual preview without audio"><svg viewBox="0 0 24 24"><path d="M9 17V6l10-2v11M9 6l10-2"/><ellipse cx="6.5" cy="18" rx="2.5" ry="2"/><ellipse cx="16.5" cy="16" rx="2.5" ry="2"/></svg></button></header>
+<section class="match-reveal"><div class="reveal-stage"><div class="prize-image reveal-prize"><canvas data-reward-3d></canvas></div></div><div class="coupon-ticket"><strong>¥5</strong></div><div class="match-end-actions"><button type="button" class="icon-cta" aria-label="Preview only: play again"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><path d="M33 20a10 10 0 1 0 0 8m0-13v7h-7"/></svg></button><button type="button" class="icon-cta" aria-label="Preview only: view item"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><path d="M14 18h20l-2 17H16Zm5 0a5 5 0 0 1 10 0"/></svg></button></div></section>
+</dialog></div><script type="module" src="./reveal-studio-v43.js"></script></body></html>

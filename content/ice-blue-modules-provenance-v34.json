@@ -1,0 +1,11 @@
+{
+  "version": "v34",
+  "createdAt": "2026-09-17",
+  "tool": "OpenAI built-in image generation",
+  "reference": "/assets/home-hook-comic-v22.png",
+  "output": "/assets/ice-blue-modules-v34.png",
+  "dimensions": "1448x1086",
+  "sha256": "9e598f2a662f3c31e4ec7e463c76a7d82e91981c9b6508af1a9e7ae5cd0bf657",
+  "rights": "Project-local generated derivative of the Owner-approved, project-provenance Hook asset; do not represent it as a third-party product photograph.",
+  "prompt": "Extract the eleven approved complete ice-blue charm modules into a strict 4x3 transparent sprite atlas. Preserve ice-blue crystal, milky pearl, polished silver, one deep-navy shooting-star focal module and the reference structures. No phone, linen, cord skeleton, text, border, watermark or baked checkerboard."
+}

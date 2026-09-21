@@ -1,0 +1,133 @@
+{
+  "version": "V17",
+  "createdAt": "2026-09-15",
+  "tool": "built-in image_gen",
+  "kind": "original generated alternative assets",
+  "approval": {
+    "owner": "钟笑咪",
+    "quote": "通过，但是文字减少",
+    "proposalSha256": "39b24c4f29183ccdf88fe38890648dbf3bcf480331149711bb37d345eb93836b",
+    "runtimeApprovalPending": true
+  },
+  "assets": [
+    {
+      "name": "collections-bloom-v17.png",
+      "bytes": 1940776,
+      "sha256": "6fb4892a35be0d26052c3cf47792a4516b09bb5364dba03bfd381b5848262624",
+      "path": "public/assets/collections-bloom-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-e083ce5c-1d4a-46e4-bb44-e6948efa831c.png",
+      "prompt": "Use case: product-mockup. Asset type: SIX separate original jewelry sprites in ONE technical atlas for an elegant 2D overhead DIY phone-chain game. Canvas 1536x1024 landscape, exactly 3 columns and 2 rows, six identical square cells, NO drawn grid. Centers at (256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). One object per cell, each within a 330x330 region, ample empty padding, no overlapping. Read row-major: 1. small blue five-petal enamel flower with ivory center; 2. two tiny cherry-red enamel cherries on joined green stems; 3. pale-pink five-petal enamel blossom with gold center; 4. softly curved translucent green glass leaf; 5. small handpainted ivory porcelain rosebud with pale pink petal tips; 6. tiny gold bee with cream enamel wings and dark striped body. Exquisite macro product-photography / polished realistic game rendering, fixed overhead slight depth, upper-left warm window highlight, believable rounded sidewalls, fine material texture, saturated jewel color not dull plastic. Parts have refined drilling or very tiny silver top attachment where physically appropriate, no cord, no neighboring beads. Upright silhouette with drill axis top-to-bottom; natural restrained specular reflections; no harsh white outlines, no starburst sparkle, no drop shadows extending far. GENUINELY TRANSPARENT RGBA background, preserve alpha and internal holes, no checkerboard, no solid matte background, no props or scene. No text, labels, numbers, logos, watermarks or chains. Each of the six sprites must be visually distinct. These are usable independent materials matching warm sage tabletop art, NOT a moodboard or complete screen.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "collections-chrome-v17.png",
+      "bytes": 1876040,
+      "sha256": "3e659c931345a2fae4f1645384a45dda43e6fb1d970978584cc8f79c8ae01c66",
+      "path": "public/assets/collections-chrome-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-70c63939-f6ea-47a0-afe7-b392761d3883.png",
+      "prompt": "Use case: product-mockup. Asset type: SIX separate original jewelry sprites in ONE technical atlas for an elegant 2D overhead DIY phone-chain game. Canvas 1536x1024 landscape, exactly 3 columns and 2 rows, six identical square cells, NO drawn grid. Centers at (256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). One object per cell, each within a 330x330 region, ample empty padding, no overlapping. Read row-major: 1. delicate sculptural polished-silver ribbon bow; 2. puffy polished-silver heart; 3. short sculptural single oval silver chain link; 4. rounded sculptural polished-silver star; 5. smoky black faceted crystal pebble; 6. polished silver sphere bead with drilled hole. Exquisite macro product-photography / polished realistic game rendering, fixed overhead slight depth, upper-left warm window highlight, believable rounded sidewalls, fine material texture, saturated jewel color not dull plastic. Parts have refined drilling or very tiny silver top attachment where physically appropriate, no cord, no neighboring beads. Upright silhouette with drill axis top-to-bottom; natural restrained specular reflections; no harsh white outlines, no starburst sparkle, no drop shadows extending far. GENUINELY TRANSPARENT RGBA background, preserve alpha and internal holes, no checkerboard, no solid matte background, no props or scene. No text, labels, numbers, logos, watermarks or chains. Each of the six sprites must be visually distinct. These are usable independent materials matching warm sage tabletop art, NOT a moodboard or complete screen.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "collections-gems-v17.png",
+      "bytes": 1974866,
+      "sha256": "3027a56dc0a56735295dd6c42783ffad994c028832337db84b4cfc51c70a77b6",
+      "path": "public/assets/collections-gems-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-c7c9cbe3-1468-4d84-8c0a-f657fdd23eb6.png",
+      "prompt": "Use case: product-mockup. Asset type: SIX separate original jewelry sprites in ONE technical atlas for an elegant 2D overhead DIY phone-chain game. Canvas 1536x1024 landscape, exactly 3 columns and 2 rows, six identical square cells, NO drawn grid. Centers at (256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). One object per cell, each within a 330x330 region, ample empty padding, no overlapping. Read row-major: 1. small rose-pink brilliant faceted round crystal bead; 2. honey-amber faceted square cube bead; 3. softly marbled jade-green doughnut ring bead; 4. deep cobalt-blue faceted gemstone bead; 5. malachite-green barrel bead with natural curved bands; 6. lapis-lazuli blue round stone bead with sparse gold mineral flecks. Exquisite macro product-photography / polished realistic game rendering, fixed overhead slight depth, upper-left warm window highlight, believable rounded sidewalls, fine material texture, saturated jewel color not dull plastic. Parts have refined drilling or very tiny silver top attachment where physically appropriate, no cord, no neighboring beads. Upright silhouette with drill axis top-to-bottom; natural restrained specular reflections; no harsh white outlines, no starburst sparkle, no drop shadows extending far. GENUINELY TRANSPARENT RGBA background, preserve alpha and internal holes, no checkerboard, no solid matte background, no props or scene. No text, labels, numbers, logos, watermarks or chains. Each of the six sprites must be visually distinct. These are usable independent materials matching warm sage tabletop art, NOT a moodboard or complete screen.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "collections-jelly-v17.png",
+      "bytes": 2166066,
+      "sha256": "e17070899d69d32c687383c0b05bf639239476df72f77c67d6bd7fffa151bf87",
+      "path": "public/assets/collections-jelly-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-ea059bf3-7bd3-4d28-94f4-37c9fae322cf.png",
+      "prompt": "Use case: product-mockup. Asset type: SIX separate original jewelry sprites in ONE technical atlas for an elegant 2D overhead DIY phone-chain game. Canvas 1536x1024 landscape, exactly 3 columns and 2 rows, six identical square cells, NO drawn grid. Centers at (256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). One object per cell, each within a 330x330 region, ample empty padding, no overlapping. Read row-major: 1. lavender thick transparent heart bead; 2. rounded sky-blue transparent five-point star bead; 3. small cherry-red plump glass heart bead; 4. rose-pink thick clear glass heart bead; 5. rounded five-petal lavender glass flower bead; 6. forest-green transparent doughnut ring bead. Exquisite macro product-photography / polished realistic game rendering, fixed overhead slight depth, upper-left warm window highlight, believable rounded sidewalls, fine material texture, saturated jewel color not dull plastic. Parts have refined drilling or very tiny silver top attachment where physically appropriate, no cord, no neighboring beads. Upright silhouette with drill axis top-to-bottom; natural restrained specular reflections; no harsh white outlines, no starburst sparkle, no drop shadows extending far. GENUINELY TRANSPARENT RGBA background, preserve alpha and internal holes, no checkerboard, no solid matte background, no props or scene. No text, labels, numbers, logos, watermarks or chains. Each of the six sprites must be visually distinct. These are usable independent materials matching warm sage tabletop art, NOT a moodboard or complete screen.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "collections-pearl-v17.png",
+      "bytes": 1733543,
+      "sha256": "de16696939df1079be760193c432ad5d03a4f3022035432ad10de12ff7e150df",
+      "path": "public/assets/collections-pearl-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-1a323def-ea68-42f9-bb06-facba0d64e04.png",
+      "prompt": "Use case: product-mockup. Asset type: SIX separate original jewelry sprites in ONE technical atlas for an elegant 2D overhead DIY phone-chain game. Canvas 1536x1024 landscape, exactly 3 columns and 2 rows, six identical square cells, NO drawn grid. Centers at (256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). One object per cell, each within a 330x330 region, ample empty padding, no overlapping. Read row-major: 1. creamy ivory asymmetrical baroque pearl bead; 2. luminous lavender baroque pearl bead; 3. bow assembled from tiny creamy seed pearls with two short flowing tails; 4. puffy heart carved from ivory mother-of-pearl; 5. long irregular ivory teardrop pearl; 6. small irregular bunch of ivory seed pearls like a grape cluster. Exquisite macro product-photography / polished realistic game rendering, fixed overhead slight depth, upper-left warm window highlight, believable rounded sidewalls, fine material texture, saturated jewel color not dull plastic. Parts have refined drilling or very tiny silver top attachment where physically appropriate, no cord, no neighboring beads. Upright silhouette with drill axis top-to-bottom; natural restrained specular reflections; no harsh white outlines, no starburst sparkle, no drop shadows extending far. GENUINELY TRANSPARENT RGBA background, preserve alpha and internal holes, no checkerboard, no solid matte background, no props or scene. No text, labels, numbers, logos, watermarks or chains. Each of the six sprites must be visually distinct. These are usable independent materials matching warm sage tabletop art, NOT a moodboard or complete screen.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "collections-sea-v17.png",
+      "bytes": 2053948,
+      "sha256": "700bfb976eb8feb2963507eb814203b60e8469757c82cc28bab55689822cf6f8",
+      "path": "public/assets/collections-sea-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-c725b49e-c8f4-412f-b522-a15f6af98365.png",
+      "prompt": "Use case: product-mockup. Asset type: SIX separate original jewelry sprites in ONE technical atlas for an elegant 2D overhead DIY phone-chain game. Canvas 1536x1024 landscape, exactly 3 columns and 2 rows, six identical square cells, NO drawn grid. Centers at (256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). One object per cell, each within a 330x330 region, ample empty padding, no overlapping. Read row-major: 1. ivory ridged scallop shell with a refined thin gold edge; 2. pale aqua faceted teardrop glass crystal with tiny top hole; 3. smooth natural ivory cowrie shell, dorsal view; 4. cream tiny realistically textured five-armed starfish charm; 5. small translucent seafoam-green sculptural sea turtle charm; 6. frosted aquamarine oval sea-glass bead. Exquisite macro product-photography / polished realistic game rendering, fixed overhead slight depth, upper-left warm window highlight, believable rounded sidewalls, fine material texture, saturated jewel color not dull plastic. Parts have refined drilling or very tiny silver top attachment where physically appropriate, no cord, no neighboring beads. Upright silhouette with drill axis top-to-bottom; natural restrained specular reflections; no harsh white outlines, no starburst sparkle, no drop shadows extending far. GENUINELY TRANSPARENT RGBA background, preserve alpha and internal holes, no checkerboard, no solid matte background, no props or scene. No text, labels, numbers, logos, watermarks or chains. Each of the six sprites must be visually distinct. These are usable independent materials matching warm sage tabletop art, NOT a moodboard or complete screen.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "tabletop-phone-v17.png",
+      "bytes": 1559858,
+      "sha256": "a6d07b991636d0a544a5f89a7b3d52b4122cad0e3bf861ba7a733ad0585e22bd",
+      "path": "public/assets/tabletop-phone-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-ab2512ab-45c4-45c9-9483-bfba37b46bed.png",
+      "prompt": "Use case: product-mockup. Asset type: independent original smartphone back sprite for an overhead 2D DIY phone-chain game, full phone isolated on GENUINELY TRANSPARENT RGBA background. Portrait canvas1024x1536. Single whole modern pearl-white smartphone, back facing camera, long axis vertical, perfectly straight fixed overhead with only very subtle sidewall depth. Finely rounded corners, opaque soft satin pearl-white unbranded case, refined narrow polished-silver rim. No blue bumper, no gemstones/studs, no transparent shell showing internal marks. Camera cluster at TOP LEFT with three believable round dark glass lenses and one small flash on a small quiet pearl-white platform. Body clean no logo, text or symbols. MOST IMPORTANT the lower three quarters must be a beautiful quiet pearl-white plane with a polished silver rounded bottom edge; on the bottom-left case edge one discreet tiny silver strap eyelet at x about 10% of phone width from its left edge and y 94% down, NO chain attached yet. Full product centered with 12% padding, exact usable silhouette, faint tight contact shadow only, no large halo or colored backdrop. Warm upper-left window reflections on narrow metal edge, believable subtle satin finish, original product not exact branded design. No screen/UI, no scene, no second phone, no labels. Preserve alpha.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "Runtime alpha crop preserves generated transparency; source file unchanged",
+      "dimensions": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "name": "tabletop-room-v17.png",
+      "bytes": 3163138,
+      "sha256": "8bc711082f1088541f606b210a4e45ac9f697e46fe59e63e60ed3eb5f8b65bfc",
+      "path": "public/assets/tabletop-room-v17.png",
+      "source": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-c59deba6-c4b4-46e7-9ca3-d50b1f435ca0.png",
+      "prompt": "Use case: product-mockup. Asset type: one portrait 853x1844 (or same aspect) background-only game art for a premium overhead jewelry DIY tabletop. Fixed straight overhead macro view, warm diffuse upper-left window sunlight. A large fine-weave desaturated sage-green linen mat fills almost the ENTIRE upper 78 percent of the image from beyond top and left edge to near right edge, softly rotated counterclockwise 8 degrees. Delicate subtle bound cloth edges near right and lower edge only; fine quiet weave, no coarse distracting giant threads. Mat lower edge at 77% height leaves warm golden oak wood band along lower 23% for controls. A few softly defocused green leaves and tiny white daisies only outside the usable area at very edges, most restrained at lowerleft and upperright. Sun-dappled outer wood but keep the entire middle sage surface softly evenly illuminated with subtle diagonal sunlight, NO busy leaf shadows across jewelry area. Calm delicate real material texture, premium cozy photorealistic illustration, not a 3D room or horizon. Absolutely empty tabletop: NO phone, NO chain, NO beads, NO bowls or boxes, NO hands, NO text, NO buttons, NO label, NO watermark. This is only the background for independent overlaid jewelry, full edge-to-edge portrait, keep center quiet and sage. Not a mockup.",
+      "review": "independent objects/ordered cells visually inspected; true RGBA and nonempty sprites checked; runtime aesthetics pending",
+      "transform": "No transform",
+      "dimensions": [
+        935,
+        1683
+      ]
+    }
+  ],
+  "notes": [
+    "No third-party brand or social-media image copied or modified.",
+    "Phone replacement removes the old blue bumper; only a cropped corner appears in home.",
+    "Cloth background rebuilt to match the approved large sage mat; no UI or jewelry baked in.",
+    "Original generator outputs preserved at source paths.",
+    "No downloaded or synthetic fake community media; no publication."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": "v19",
+  "generated_with": "built-in image_gen",
+  "recorded_at": "2026-09-15",
+  "reference": "evidence/proposed-home-cords-v19.png",
+  "attempts": [
+    {
+      "path": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-50e9ea50-7667-459b-8b87-6f0935ada1bf.png",
+      "prompt": "Use case: background-extraction. Production sprite for a fixed top-down 2D phone-chain game.\nReference is the approved homepage. Extract/recreate ONLY its complete pearl-white smartphone as an ORIGINAL standalone high-detail product asset on genuine transparent alpha. No background cloth, wood, light wash, cast shadow, beads, cord, clasp, text or UI.\nExactly overhead view of the BACK of a complete upright contemporary white smartphone, entire rounded rectangular silhouette and all four corners inside the image with 12% transparent margin. Three realistic dark optical camera lenses in an accurate subtle raised pearl-white camera island at the UPPER LEFT. Satin white rear glass, fine brushed silver side frame, clean smooth anti-aliased edge, delicately distinct metal buttons. The entire phone must be visible and vertically straight, NO tilt, no skew, no mirroring, no perspective shortening.\nA tiny integrated silver attachment eyelet protrudes from the LOWER RIGHT side of the clear case, approximately 92% down the height, open centre genuinely transparent. No eyelet on the left. The attachment ring is EMPTY with no string.\nSoft neutral studio reflections contained on the physical phone; no harsh glow, no star glints, no black/fringed outline, no checkerboard pixels. No logos, branding, lettering, people or extra props. Source portrait 1024x1536, actual phone height about 1320px and width about 685px, smooth uncut edges. Preserve real alpha for every pixel outside the phone and through the small right eyelet.",
+      "status": "Rejected: no actual alpha, checkerboard background"
+    },
+    {
+      "path": "/Users/ashley/.codex/generated_images/01a081ed-0d49-7842-8a3f-b2b038ec8c0e/exec-bf6e6c5e-11ad-418b-88a4-73a50c3e7dad.png",
+      "prompt": "Edit this standalone phone sprite only. Preserve the exact phone, lenses, metal frame, EMPTY lower-right eyelet, size and position. Replace ALL checkerboard/background/shadow pixels with perfectly flat uniform opaque RGB(255,0,255) #FF00FF, including inside the right eyelet. No texture, gradient, shadows or checkerboard on the background; no magenta spill on the object. A clean antialiased cutout silhouette, no gray/black fringe. This is intentionally an opaque chroma-key production asset, NOT a transparency request. Do not change the phone or add text, cord or props.",
+      "status": "Selected intentional opaque chroma-key source"
+    }
+  ],
+  "asset": {
+    "path": "public/assets/tabletop-phone-v19.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1421331,
+    "sha256": "64a20897064dab4bb0220b4404cd66d62a5e04591f442c3eb878848cf75e7a02",
+    "rights": "original-generated-alternative",
+    "review_status": "pending-runtime-review"
+  },
+  "processing": "Source copied without edits. Runtime first removes known magenta background pixels (including nonuniform color noise), then derives neutral-silver alpha for remaining keyed edge pixels and trims to the actual subject. Earlier chroma-magnitude and green-only edge methods retained low-alpha background noise across the full 1024x1536 image, making the visible phone too small. The corrected audit requires solid phone coverage above 0.75, in addition to real clear/partial pixels. Intermediate screenshots remain evidence, not the current preview.",
+  "cords": {
+    "source": "Original procedural Canvas2D paths; not third-party textures or modified generated images",
+    "types": [
+      "Cinnamon braid",
+      "Ivory silk",
+      "Ocean weave",
+      "Silver links",
+      "Classic cord"
+    ],
+    "rendering": "Fibres/interlocking links follow actual loop and connector; cached offscreen layers; same renderer for exported PNG",
+    "limitations": "Baked/procedural 2D shading, not physical 3D/PBR or real material composition"
+  },
+  "boundaries": [
+    "No source phone logos or external brand art",
+    "Source PNG is NOT actually transparent",
+    "Actual runtime aesthetics still require owner feedback",
+    "No deployment, real-device testing or account changes"
+  ]
+}

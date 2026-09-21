@@ -1,0 +1,161 @@
+"""Native UI audit for the V7 styling minigame; no app state is injected."""
+from pathlib import Path
+import argparse
+import json
+from playwright.sync_api import sync_playwright, expect
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--webkit', action='store_true')
+parser.add_argument('--capture-only', action='store_true')
+args = parser.parse_args()
+evidence = Path(__file__).resolve().parents[1] / 'evidence' / 'styling-v7'
+evidence.mkdir(parents=True, exist_ok=True)
+prefix = 'webkit' if args.webkit else 'chromium'
+solutions = [
+    ['Blue eye', 'Aqua drop', 'Cloud pearl', 'Pearl shell', 'Clear quartz', 'Cobalt gem'],
+    ['Rose prism', 'Lilac heart', 'Cloud pearl', 'Pink dice', 'Clear quartz', 'Violet candy'],
+    ['Jade ring', 'Lime gem', 'Daisy', 'Cloud pearl', 'Sun orb', 'Pearl shell'],
+    ['Cobalt gem', 'Clear quartz', 'Cloud pearl', 'Cloud pearl', 'Clear quartz', 'Cobalt gem'],
+    ['Cherries', 'Pink dice', 'Violet candy', 'Sun bow', 'Blue star', 'Lime gem'],
+]
+with sync_playwright() as p:
+    browser = p.webkit.launch(headless=True) if args.webkit else p.chromium.launch(headless=True, args=['--use-angle=metal', '--enable-gpu'])
+    context = browser.new_context(viewport={'width':390, 'height':844}, is_mobile=True, has_touch=True, device_scale_factor=1, accept_downloads=True)
+    page = context.new_page()
+    context.route('https://shop.example.com/**', lambda route: route.fulfill(status=200, content_type='text/html', body='<h1>Test shop only</h1>'))
+    errors = []
+    page.on('pageerror', lambda e: errors.append(str(e)))
+    page.on('console', lambda m: errors.append(m.text) if m.type == 'error' else None)
+    page.goto('http://127.0.0.1:5114/3d-lab.html', wait_until='networkidle')
+    page.wait_for_timeout(1200)
+    shell = page.locator('[data-lab-shell]')
+    expect(shell).to_have_attribute('data-mode', '3d')
+    expect(page.locator('[data-box-slot]:visible')).to_have_count(6)
+    page.screenshot(path=str(evidence / f'{prefix}-initial.png'))
+    print(json.dumps({'loaded': True, 'errors':errors}), flush=True)
+    if not args.capture_only:
+        if not args.webkit:
+            cdp = context.new_cdp_session(page)
+            def touch(kind, points): cdp.send('Input.dispatchTouchEvent', {'type':kind,'touchPoints':points})
+            slot = page.locator('[data-box-slot="0"]').bounding_box()
+            finger = {'x':slot['x'] + 22,'y':slot['y'] + 22,'id':1}
+            touch('touchStart',[finger]); expect(shell).to_have_attribute('data-holding','true')
+            touch('touchCancel',[]); expect(shell).to_have_attribute('data-holding','false')
+            touch('touchStart',[finger]); touch('touchStart',[finger,{'x':140,'y':300,'id':2}]); touch('touchEnd',[])
+            expect(page.locator('[data-count]')).to_have_text('0')
+            expect(shell).to_have_attribute('data-holding','false')
+            radius = float(shell.get_attribute('data-camera-radius'))
+            touch('touchStart',[{'x':120,'y':300,'id':1},{'x':260,'y':300,'id':2}])
+            for s in range(1,7): touch('touchMove',[{'x':120-s*5,'y':300,'id':1},{'x':260+s*5,'y':300,'id':2}])
+            touch('touchEnd',[]); page.wait_for_timeout(300)
+            assert float(shell.get_attribute('data-camera-radius')) < radius
+            page.locator('[data-action="reset-camera"]').tap(); page.wait_for_timeout(1000)
+            print('Native touch cancellation, multitouch and pinch passed', flush=True)
+        # Two-tap pickup must leave the original draft unchanged until the second tap.
+        page.locator('[data-box-slot="0"]').tap()
+        expect(shell).to_have_attribute('data-holding', 'true')
+        expect(page.locator('[data-count]')).to_have_text('0')
+        page.wait_for_timeout(400)
+        page.screenshot(path=str(evidence / f'{prefix}-pickup.png'))
+        page.locator('[data-drop-target]').tap()
+        expect(page.locator('[data-count]')).to_have_text('1')
+        page.get_by_role('button', name='Undo last change', exact=True).tap()
+        expect(page.locator('[data-count]')).to_have_text('0')
+        page.locator('[data-box-slot="1"]').tap()
+        page.get_by_role('button', name='Put back', exact=True).tap()
+        expect(page.locator('[data-count]')).to_have_text('0')
+        print('Pickup, commit, undo and cancellation passed', flush=True)
+        for index, solution in enumerate(solutions):
+            page.get_by_role('button', name='Material collection and rewards', exact=True).tap()
+            for name in solution: page.get_by_role('button', name=f'Add {name}', exact=True).tap()
+            page.get_by_role('button', name='Close bead collection', exact=True).tap()
+            expect(shell).to_have_attribute('data-challenge-passed', 'true')
+            if index == 0:
+                page.wait_for_timeout(2400)
+                page.screenshot(path=str(evidence / f'{prefix}-ocean.png'))
+            page.locator('[data-action="finish"]').tap()
+            expect(shell).to_have_attribute('data-state', 'finished')
+            page.locator('[data-action="score"]').tap()
+            expect(page.locator('[data-reward-reveal]')).to_be_visible()
+            page.get_by_role('button',name='Close score and reward').tap()
+            if index == 0:
+                page.wait_for_timeout(2400)
+                page.screenshot(path=str(evidence / f'{prefix}-result.png'))
+                page.get_by_role('button', name='Edit', exact=True).tap()
+                page.locator('[data-action="finish"]').tap()
+                expect(page.locator('[data-reward-reveal]')).to_be_hidden()
+                expect(page.locator('[data-studio-level]')).to_contain_text('40 XP')
+            page.locator('[data-action="next"]').tap()
+        expect(shell).to_have_attribute('data-game-mode', 'free')
+        saved = page.evaluate('JSON.parse(localStorage.getItem("lucky-link.styling.v2"))')
+        assert len(saved['completed']) == len(saved['claimed']) == 5
+        print('Five letters, grades, first-clear rewards, repeat protection passed', flush=True)
+        page.get_by_role('button', name='Material collection and rewards', exact=True).tap()
+        for name in ['Sea-glass star', 'Rose-glass heart', 'Moonlit pearl']: page.get_by_role('button', name=f'Add {name}', exact=True).tap()
+        page.get_by_role('button', name='Close bead collection', exact=True).tap()
+        page.get_by_role('button', name='Edit threading order', exact=True).tap()
+        page.get_by_role('button', name='2. Rose-glass heart', exact=True).tap()
+        page.get_by_role('button', name='Return to box', exact=True).tap()
+        expect(shell).to_have_attribute('data-composition', 'sea-star,moon-pearl')
+        expect(shell).to_have_attribute('data-box-contents', 'rose-heart')
+        page.get_by_role('button', name='Material collection and rewards', exact=True).tap()
+        page.locator('[data-returned-index="0"]').tap()
+        page.get_by_role('button', name='Close bead collection', exact=True).tap()
+        expect(shell).to_have_attribute('data-composition', 'sea-star,moon-pearl,rose-heart')
+        page.get_by_role('button', name='Undo last change', exact=True).tap()
+        expect(shell).to_have_attribute('data-box-contents', 'rose-heart')
+        page.reload(wait_until='networkidle')
+        expect(shell).to_have_attribute('data-composition', 'sea-star,moon-pearl')
+        expect(shell).to_have_attribute('data-box-contents', 'rose-heart')
+        print('Return, reuse, paired undo and reload persisted', flush=True)
+        page.get_by_role('button', name='Sound', exact=True).tap()
+        page.reload(wait_until='networkidle')
+        expect(page.get_by_role('button', name='Sound', exact=True)).to_have_attribute('aria-pressed','false')
+        page.locator('[data-action="collection"]').tap()
+        page.get_by_role('button', name='Add Cloud pearl', exact=True).tap()
+        page.get_by_role('button', name='Close bead collection', exact=True).tap()
+        page.locator('[data-action="finish"]').tap()
+        page.locator('[data-action="customize"]').tap()
+        expect(page.locator('[data-shop-message]')).to_contain_text('No shop connected')
+        page.get_by_label('Design name', exact=True).fill('Ocean gift')
+        page.get_by_role('combobox', name='Cord color', exact=True).select_option('rose')
+        page.get_by_label('Note for the maker', exact=True).fill('For a friend')
+        expect(page.locator('[data-order-text]')).to_contain_text('Sea-glass star')
+        with page.expect_download() as capture: page.locator('[data-action="download-list"]').tap()
+        assert capture.value.suggested_filename == 'phone-chain-design.txt'
+        page.get_by_role('button', name='Close customization', exact=True).tap()
+        page.locator('[data-action="edit"]').tap(); page.locator('[data-action="settings"]').tap()
+        page.get_by_label('Shop link', exact=True).fill('javascript:alert(1)')
+        page.get_by_role('button', name='Save links', exact=True).tap()
+        expect(page.locator('[data-shop-status]')).to_contain_text('Nothing was saved')
+        page.get_by_label('Shop name', exact=True).fill('Test atelier')
+        page.get_by_label('Shop link', exact=True).fill('https://shop.example.com/items')
+        page.get_by_label('Custom-order link', exact=True).fill('https://shop.example.com/custom')
+        page.get_by_role('combobox', name='Material', exact=True).select_option('pearl')
+        page.get_by_label('Material product link', exact=True).fill('https://shop.example.com/pearl')
+        page.get_by_role('button', name='Save links', exact=True).tap()
+        expect(page.locator('[data-shop-status]')).to_contain_text('Links saved')
+        with page.expect_download() as capture: page.get_by_role('button', name='Export saved config', exact=True).tap()
+        assert capture.value.suggested_filename == 'commerce-config.json'
+        page.get_by_role('button', name='Close shop settings', exact=True).tap()
+        page.reload(wait_until='networkidle')
+        page.locator('[data-action="finish"]').tap(); page.locator('[data-action="customize"]').tap()
+        expect(page.get_by_role('link', name='Contact maker')).to_have_attribute('href','https://shop.example.com/custom')
+        page.locator('summary').tap()
+        expect(page.get_by_role('link', name='Cloud pearl')).to_have_attribute('rel','noopener noreferrer')
+        with page.expect_popup() as popup: page.get_by_role('link', name='Contact maker').tap()
+        popup.value.wait_for_load_state(); assert popup.value.url == 'https://shop.example.com/custom'; popup.value.close()
+        page.screenshot(path=str(evidence / f'{prefix}-customization.png'))
+        page.get_by_role('button', name='Close customization', exact=True).tap()
+        page.locator('[data-action="edit"]').tap()
+        print('Mute, customization, actual list, link validation, config persistence/export and explicit external link passed', flush=True)
+        for width, height in [(320,568),(844,390),(1440,1000),(390,844)]:
+            page.set_viewport_size({'width':width,'height':height}); page.wait_for_timeout(500)
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            expect(page.locator('[data-action="finish"]')).to_be_in_viewport()
+            expect(page.get_by_role('button', name='Undo last change', exact=True)).to_be_in_viewport()
+            assert page.locator('[data-builder]').evaluate('(el) => getComputedStyle(el).backgroundColor') == 'rgba(0, 0, 0, 0)'
+            page.screenshot(path=str(evidence / f'{prefix}-{width}x{height}.png'))
+        assert not errors, errors
+        print(json.dumps({'result':'pass','browser':prefix,'errors':errors}), flush=True)
+    browser.close()
